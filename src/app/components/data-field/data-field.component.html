@@ -1,0 +1,10 @@
+<div class="container">
+  <input [disabled]="disabledTitle" type="text" class="title-input" value={{title}} #titleInput>
+  <input #dataFieldRef [disabled]="disabledData" type="text" class="data-input" value={{data}} #dataInput>
+
+  <button (click)="toggleEdit(dataFieldRef)" class="editBtn"
+    (click)="updateEmployeeData(titleInput.value,dataInput.value)">
+    {{disabledData ? "EDIT" : "SAVE"}}
+  </button>
+  <button *ngIf="!required" class="deleteBtn" (click)="deleteDataField()">X</button>
+</div>

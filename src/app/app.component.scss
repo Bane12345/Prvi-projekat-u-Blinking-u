@@ -1,0 +1,57 @@
+
+header{
+  background-color: orange;
+  width: 100vw;
+  height: 30vh;
+}
+
+.container{
+  display: flex;
+  height: 70vh;
+
+
+  .left-container{
+    flex:3;
+    padding: 1rem;
+
+    h1{
+      font-size: 2em;
+      border-bottom: 1px solid black;
+      padding: 1rem;
+      padding-left:0;
+    }
+  }
+  .right-container{
+    flex:7;
+    background-color: blue;
+  }
+
+  .addNewFieldBtn{
+    border:2px dashed gray;
+    color:gray;
+    font-size: 0.8em;
+    text-align: center;
+
+    width: 60%;
+    margin:auto;
+    margin-top:15px;
+    cursor: pointer;
+    padding:5px;
+    transition: all 0.15s;
+  }
+
+  .addNewFieldBtn:hover{
+    background-color: black;
+    border:2px solid black;
+    color:white;
+    transform: scale(1.1);
+  }
+
+  .dataFields-container{
+    height: 300px;
+    overflow: auto;
+    padding-bottom: 100px;
+  }
+}
+
+
