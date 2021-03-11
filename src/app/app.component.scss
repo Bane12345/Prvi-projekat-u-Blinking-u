@@ -1,8 +1,8 @@
 
 header{
-  background-color: orange;
   width: 100vw;
   height: 30vh;
+  background-color:black;
 }
 
 .container{
@@ -12,18 +12,86 @@ header{
 
   .left-container{
     flex:3;
-    padding: 1rem;
 
     h1{
       font-size: 2em;
       border-bottom: 1px solid black;
-      padding: 1rem;
       padding-left:0;
+
+      h1{
+        padding-top:10px;
+        font-size:1em;
+      }
+
+      display:flex;
+      justify-content: space-between;
+
+      background-color:black;
+      color:white;
+
+      .status-container{
+        width:35%;
+        min-width: 100px;
+        padding:10px;
+        background-color:#666;
+        h4{
+          font-size: 0.8em;
+          padding:0 0 10px 0;
+        }
+
+        .statusText{
+          padding:10px 0;
+          font-size: 0.6em;
+        }
+
+        .statusButtons{
+          display: flex;
+          justify-content: space-between;
+          width:100%;
+
+          .statusBtn{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor:pointer;
+
+            &:hover{
+              transform: scale(1.4);
+            }
+
+            &.selected{
+              border:5px solid white;
+              transform: scale(1.6);
+            }
+          }
+
+
+          .redBtn{
+            background-color:red;
+          }
+          .yellowBtn{
+            background-color:rgb(255, 196, 0);
+          }
+          .greenBtn{
+            background-color:green;
+          }
+        }
+      }
     }
   }
   .right-container{
     flex:7;
-    background-color: blue;
+    display:flex;
+    flex-direction: column;
+
+    .emloyeeCockpit{
+      width: 100%;
+      background-color:red;
+      padding:10px;
+
+
+    }
+
   }
 
   .addNewFieldBtn{

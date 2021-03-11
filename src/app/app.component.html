@@ -1,10 +1,21 @@
-<header>Top</header>
+<header></header>
 <section class="container">
   <section class="left-container">
     <h1>
-      Employee's profile
-      <div class="statusButtons-container">
-
+      <h1>Employee's profile</h1>
+      <div class="status-container">
+        <h4>Your status</h4>
+        <div class="statusButtons">
+          <div (click)='setStatus("Busy")' class="statusBtn redBtn" [ngClass]="{'selected': status==='Busy'}"></div>
+          <div (click)='setStatus("Out of office")' class="statusBtn yellowBtn"
+            [ngClass]="{'selected': status==='Out of office'}">
+          </div>
+          <div (click)='setStatus("Available")' class="statusBtn greenBtn" [ngClass]="{'selected': status==='Available'}">
+          </div>
+        </div>
+        <div class="statusText">
+          {{status}}
+        </div>
       </div>
     </h1>
     <div class="dataFields-container" #dataFieldsContainer>
@@ -21,5 +32,16 @@
     </div>
 
   </section>
-  <section class="right-container">Other Employees</section>
+  <section class="right-container">
+    <div class="emloyeeCockpit">
+      <h1>Employees</h1>
+      <div class="filter-container">
+        <div class="filterBnts">
+          <div class="busy-btn">Busy</div>
+          <div class="out-of-office-btn">Out of office</div>
+          <div class="available-btn">Available</div>
+        </div>
+      </div>
+    </div>
+  </section>
   </section>

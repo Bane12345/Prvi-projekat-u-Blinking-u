@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, ViewChild , ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -31,8 +31,9 @@ export class AppComponent {
     }
   ]
 
-  @ViewChild('dataFieldsContainer') dataFieldsContainer:ElementRef;
+  status:string="undefined";
 
+  @ViewChild('dataFieldsContainer') dataFieldsContainer:ElementRef;
   addNewDataField(){
     this.mainEmployeeData.push({
       title:"Title",
@@ -55,4 +56,9 @@ export class AppComponent {
     let newData=data.data;
     this.mainEmployeeData[index]=newData;
   }
+
+  setStatus(status:string){
+    this.status=status;
+  }
+
 }
