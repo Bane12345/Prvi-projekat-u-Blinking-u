@@ -84,10 +84,22 @@ header{
     display:flex;
     flex-direction: column;
 
+    .employee-card-container{
+      margin:auto;
+      padding:20px;
+      padding-top:50px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr) ;
+      grid-gap:50px;
+    }
+
     .emloyeeCockpit{
 
       h1{
         font-size: 3rem;
+        .total{
+          font-size: 0.7em;
+        }
       }
       width: 100%;
       padding:10px;
@@ -106,7 +118,7 @@ header{
           display:flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 1.2em;
+          font-size: 1.4em;
           cursor: pointer;
 
           .red-btn{
@@ -127,6 +139,12 @@ header{
             background-color:green;
             color:rgb(0, 51, 0);
             padding:5px 10px;
+            border-radius: 5px;
+          }
+
+          .blue-btn{
+            background-color: blue;
+            padding:5px 20px;
             border-radius: 5px;
           }
         }
@@ -161,6 +179,7 @@ header{
     overflow: auto;
     padding-bottom: 100px;
   }
+
 }
 
 

@@ -6,42 +6,62 @@
       <div class="status-container">
         <h4>Your status</h4>
         <div class="statusButtons">
-          <div (click)='setStatus("Busy")' class="statusBtn redBtn" [ngClass]="{'selected': status==='Busy'}"></div>
-          <div (click)='setStatus("Out of office")' class="statusBtn yellowBtn"
-            [ngClass]="{'selected': status==='Out of office'}">
-          </div>
-          <div (click)='setStatus("Available")' class="statusBtn greenBtn" [ngClass]="{'selected': status==='Available'}">
-          </div>
+          <div
+            (click)="setStatus('Busy')"
+            class="statusBtn redBtn"
+            [ngClass]="{ selected: status === 'Busy' }"
+          ></div>
+          <div
+            (click)="setStatus('Out of office')"
+            class="statusBtn yellowBtn"
+            [ngClass]="{ selected: status === 'Out of office' }"
+          ></div>
+          <div
+            (click)="setStatus('Available')"
+            class="statusBtn greenBtn"
+            [ngClass]="{ selected: status === 'Available' }"
+          ></div>
         </div>
         <div class="statusText">
-          {{status}}
+          {{ status }}
         </div>
       </div>
     </h1>
     <div class="dataFields-container" #dataFieldsContainer>
-      <app-data-field *ngFor="let data of mainEmployeeData; let i=index" [required]="data.required ? data.required : false"
+      <app-data-field
+        *ngFor="let data of mainEmployeeData; let i = index"
+        [required]="data.required ? data.required : false"
         [disabledData]="data.disabledData != null ? data.disabledData : true"
-        [disabledTitle]="data.disabledTitle != null ? data.disabledTitle : true" [title]="data.title" [data]="data.data"
-        (deleteDataFieldEmiter)="deleteDataField($event)" (dataChangedEvent)="updateEmployeeData($event)" [index]="i">
+        [disabledTitle]="data.disabledTitle != null ? data.disabledTitle : true"
+        [title]="data.title"
+        [data]="data.data"
+        (deleteDataFieldEmiter)="deleteDataField($event)"
+        (dataChangedEvent)="updateEmployeeData($event)"
+        [index]="i"
+      >
       </app-data-field>
     </div>
-
 
     <div class="addNewFieldBtn" (click)="addNewDataField()">
       Add aditional info +
     </div>
-
   </section>
   <section class="right-container">
     <div class="emloyeeCockpit">
-      <h1>Employees</h1>
+      <h1>Employees
+        <div class="total">Total: {{tempArray.length}}</div>
+      </h1>
       <div class="filter-container">
         <div class="filterBnts">
-          <div class="red-btn">Busy</div>
-          <div class="yellow-btn">Out of office</div>
-          <div class="green-btn">Available</div>
+          <div class="red-btn" (click)="filterEmployees('Busy')">Busy</div>
+          <div class="yellow-btn" (click)="filterEmployees('Out of office')">Out of office</div>
+          <div class="green-btn" (click)="filterEmployees('Available')">Available</div>
+          <div class="blue-btn" (click)="filterEmployees('All')">All</div>
         </div>
       </div>
     </div>
+    <div class="employee-card-container">
+      <app-empoyee-card *ngFor="let employee of tempArray" [employeeData]="employee"></app-empoyee-card>
+    </div>
   </section>
-  </section>
+</section>
