@@ -42,9 +42,12 @@
       </app-data-field>
     </div>
 
-    <div class="addNewFieldBtn" (click)="addNewDataField()">
+    <div class="addNewFieldBtn" (click)="addNewDataField()" *ngIf="false">
       Add aditional info +
     </div>
+    <button class="addNewEmployeeBtn" (click)="addNewEmployee()">
+      Transfer Employee -->
+    </button>
   </section>
   <section class="right-container">
     <div class="emloyeeCockpit">

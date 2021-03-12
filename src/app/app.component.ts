@@ -289,6 +289,15 @@ export class AppComponent {
       "status": "Busy"
     }]
 
+    addNewEmployee(){
+      this.allEmployees.unshift({
+        name: this.mainEmployeeData[0].data,
+        position: this.mainEmployeeData[1].data,
+        department: this.mainEmployeeData[2].data,
+        status: this.status
+      })
+    }
+
 
   tempArray:{
     name:string,
