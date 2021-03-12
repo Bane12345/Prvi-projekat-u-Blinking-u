@@ -299,7 +299,7 @@ export class AppComponent {
 
   selectedStatus:string[]=[];
 
-  status:string="undefined";
+  status:string="Undefined";
 
   @ViewChild('dataFieldsContainer') dataFieldsContainer:ElementRef;
   addNewDataField(){
