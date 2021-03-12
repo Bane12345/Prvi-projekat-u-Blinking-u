@@ -306,7 +306,9 @@ export class AppComponent {
     status:string
   }[]=this.allEmployees;
 
-  status:string="undefined";
+  selectedStatus:string[]=[];
+
+  status:string="Undefined";
 
   @ViewChild('dataFieldsContainer') dataFieldsContainer:ElementRef;
   addNewDataField(){
@@ -336,11 +338,19 @@ export class AppComponent {
     this.status=status;
   }
 
-  filterEmployees(status:string){
-    if(status==="All"){
+  filterEmployees(status:string, btn: HTMLDivElement){
+    if(this.selectedStatus.includes(status)){
+      btn.classList.remove('selectedBtn');
+      this.selectedStatus = this.selectedStatus.filter(el=>el!==status);
+    }else{
+      btn.classList.add('selectedBtn');
+      this.selectedStatus.push(status);
+    }
+
+    if(this.selectedStatus.length===0){
       this.tempArray=this.allEmployees;
     }else{
-      this.tempArray=this.allEmployees.filter(employee => employee.status==status)
+      this.tempArray=this.allEmployees.filter(employee => this.selectedStatus.includes(employee.status))
     }
   }
 
