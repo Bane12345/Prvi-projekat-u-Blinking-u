@@ -53,10 +53,9 @@
       </h1>
       <div class="filter-container">
         <div class="filterBnts">
-          <div class="red-btn" (click)="filterEmployees('Busy')">Busy</div>
-          <div class="yellow-btn" (click)="filterEmployees('Out of office')">Out of office</div>
-          <div class="green-btn" (click)="filterEmployees('Available')">Available</div>
-          <div class="blue-btn" (click)="filterEmployees('All')">All</div>
+          <div class="red-btn" (click)="filterEmployees('Busy',btn1)" #btn1>Busy</div>
+          <div class="yellow-btn" (click)="filterEmployees('Out of office',btn2)" #btn2>Out of office</div>
+          <div class="green-btn" (click)="filterEmployees('Available',btn3)" #btn3>Available</div>
         </div>
       </div>
     </div>
